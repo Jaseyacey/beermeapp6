@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'mobx-react';
-import AppNavigator from '';
-import stores from '';
+import AppNavigator from './app/stores/app.navigator';
+import stores from './app/stores';
 import {
   Styleprovider
 } from 'native-base';
-import getTheme from '';
-import custom from '';
+import getTheme from './native-base-theme/components';
+import custom from './native-base-theme/variables/custom';
 
 export default class App extends Component {
   render() {
