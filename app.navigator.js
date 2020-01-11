@@ -1,8 +1,8 @@
 import React from 'react';
 import { DrawerNavigator, StackNavigator } from 'react-navigation';
-import SplashScreen from '../screens/splash.screen';
-import LoginScreen from '../screens/login.screen';
-import MatchScreen from '../screens/match.screen';
+import SplashScreen from './app/screens/splash.screen';
+import LoginScreen from './app/screens/login.screen';
+import MatchScreen from './app/screens/match.screen';
 
 const Splash = {
     screen: SplashScreen,

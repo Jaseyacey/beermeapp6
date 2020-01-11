@@ -17,7 +17,7 @@ export default class SplashScreen extends Component {
         const { stores } = this.props
         return (
             <View style={{flex: 1}}>
-                <Image style={{flex: 1, width: null, height: null}} source={stores.config,SplashImg}/>
+                <Image style={{flex: 1, width: null, height: null}} source={stores.config.SplashImg}/>
             </View>
         )
     }
