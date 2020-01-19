@@ -1,9 +1,9 @@
 import React from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator, DrawerNavigator } from 'react-navigation-stack';
 import { appNavigator } from 'react-navigation-stack';
 import SplashScreen from '../screens/splash.screen';
 import LoginScreen from '../screens/login.screen';
-import MatchScreen from '../screens/match.screen';
+import MatchScreen from '../screens/match.screen';  
 
 const Splash = {
   screen: SplashScreen,
@@ -26,14 +26,14 @@ const Match = {
   }
 }
 const MatchStack = createStackNavigator({
-  Match: Match
+  MatchScreen: MatchStack
 },{})
 const RouteConfig = {
   initialRoute: 'Splash'
 }
 
-const navigate = appNavigator ({
-    Match: {screen: MatchStack},
+const AppNavigator = DrawerNavigator ({
+    Match: { screen: MatchStack },
     Splash: SplashScreen,
     Login: LoginScreen
 }, RouteConfig)
