@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'mobx-react';
-import AppNavigator from './app/stores/app.navigator';
+import AppNavigator from './app.navigator';
 import stores from './app/stores';
 import {
   Styleprovider

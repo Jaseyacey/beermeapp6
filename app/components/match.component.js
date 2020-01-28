@@ -7,7 +7,7 @@ import {
   CardItem,
   DeckSwiper
 } from 'native-base';
-import { View, Text, Image} from 'react-native';
+import { View, Text, Image, StyleSheet} from 'react-native';
 import { observer } from 'mobx-react/native';
 import { observable } from 'mobx';
 import { createAutoSubscriber, autoSubscriber } from 'firebase-nest';
@@ -40,10 +40,10 @@ class Match extends Component {
       return (
         <Card>
           <CardItem cardBody>
-            { pic.uri != undefined && pic.uri != "" ? <Image source={pic}/> : null}
+            { pic.uri != undefined && pic.uri != "" ? <Image style={styles.thumbnail}source={pic}/> : null}
           </CardItem>
           <CardItem>
-            <Text>
+            <Text style={styles.text}>
               {text}
             </Text>
           </CardItem>
@@ -56,7 +56,7 @@ class Match extends Component {
     return (
       <Card>
         <CardItem cardBody>
-          <Text> Out of Matches </Text>
+          <Text style={style.text}> Out of Matches </Text>
         </CardItem>
       </Card>
     )
@@ -90,5 +90,18 @@ class Match extends Component {
     )
   }
 }
+const styles = StyleSheet.create({
+    text: {
+        color: 'black',
+        fontSize: 20,
+        paddingtop: 10,
+        padddingBottom: 10
+    },
+    thumbnail: {
+        width: 300,
+        height: 300,
+        flex: 1
+    }
+})
 
 export default autoSubscriber(observer(Match))
