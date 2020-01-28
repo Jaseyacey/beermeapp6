@@ -1,12 +1,5 @@
 import React, {Component} from 'react'
-import {
-  Button,
-  Icon,
-  Spinner,
-  Card,
-  CardItem,
-  DeckSwiper
-} from 'native-base';
+import { Button,Icon,Spinner,Card,CardItem,DeckSwiper } from 'native-base';
 import { View, Text, Image, StyleSheet} from 'react-native';
 import { observer } from 'mobx-react/native';
 import { observable } from 'mobx';
