@@ -3,6 +3,7 @@ import { DrawerNavigator, StackNavigator } from 'react-navigation';
 import SplashScreen from './app/screens/splash.screen';
 import LoginScreen from './app/screens/login.screen';
 import MatchScreen from './app/screens/match.screen';
+// import { Router, Link } from "@reach/router"
 
 const Splash = {
   screen: SplashScreen,
@@ -25,7 +26,7 @@ const Match = {
   }
 }
 const MatchStack = StackNavigator({
-  Match: Match
+  Match: MatchScreen
 },{})
 const RouteConfig = {
   initialRoute: 'Splash'
@@ -36,4 +37,4 @@ const AppNavigator = DrawerNavigator({
   Match: {screen: MatchStack}
 },RouteConfig)
 
-export default AppNavigator;
+export default AppNavigator

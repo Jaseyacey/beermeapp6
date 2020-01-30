@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import { Button,Icon,Spinner,Card,CardItem,DeckSwiper } from 'native-base';
-import { View, Text, Image, StyleSheet} from 'react-native';
-import { observer } from 'mobx-react/native';
+import {Button,Icon,Spinner,Card,CardItem,DeckSwiper} from 'native-base';
+import { StyleSheet, View, Text, Image} from 'react-native';
+import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 import { createAutoSubscriber, autoSubscriber } from 'firebase-nest';
 
@@ -33,7 +33,7 @@ class Match extends Component {
       return (
         <Card>
           <CardItem cardBody>
-            { pic.uri != undefined && pic.uri != "" ? <Image style={styles.thumbnail}source={pic}/> : null}
+            { pic.uri != undefined && pic.uri != "" ? <Image style={styles.thumbnail} source={pic}/> : null}
           </CardItem>
           <CardItem>
             <Text style={styles.text}>
@@ -49,7 +49,7 @@ class Match extends Component {
     return (
       <Card>
         <CardItem cardBody>
-          <Text style={style.text}> Out of Matches </Text>
+          <Text style={styles.text}> Out of Matches </Text>
         </CardItem>
       </Card>
     )
@@ -84,17 +84,16 @@ class Match extends Component {
   }
 }
 const styles = StyleSheet.create({
-    text: {
-        color: 'black',
-        fontSize: 20,
-        paddingtop: 10,
-        padddingBottom: 10
-    },
-    thumbnail: {
-        width: 300,
-        height: 300,
-        flex: 1
-    }
+  text: {
+    color: 'black',
+    fontSize: 20,
+    paddingTop: 10,
+    paddingBottom: 10
+  },
+  thumbnail: {
+    width: 300,
+    height: 300,
+    flex: 1
+  }
 })
-
-export default autoSubscriber(observer(Match))
+export default autoSubscriber(observerable(Match))

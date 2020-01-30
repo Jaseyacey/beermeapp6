@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { action } from 'mobx';
 import firebase from 'firebase';
 import MobxFireBaseStore from 'mobx-firebase-store';
